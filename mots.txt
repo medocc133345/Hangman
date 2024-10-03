@@ -1,0 +1,33 @@
+# Mots faciles (3-5 lettres)
+chat
+chien
+lion
+lune
+soleil
+eau
+feu
+vent
+arbre
+fleur
+pied
+main
+neige
+mer
+lac
+
+# Mots difficiles (6 lettres ou plus)
+ordinateur
+bicyclette
+télévision
+imprimante
+gouvernement
+hélicoptère
+philosophie
+chocolat
+bibliothèque
+entreprise
+université
+programmation
+aéroport
+volcanique
+diplomatie
