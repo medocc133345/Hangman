@@ -1,0 +1,43 @@
+<!-- templates/scores.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu - Scores</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container classic"> <!-- Thème classique pour la page des scores -->
+        <h1>Leaderboard</h1>
+        {{if .Scores}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pseudo</th>
+                        <th>Catégorie</th>
+                        <th>Niveau</th>
+                        <th>Statut</th>
+                        <th>Indices Utilisés</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Scores}}
+                        <tr>
+                            <td>{{.Username}}</td>
+                            <td>{{.Category | title}}</td>
+                            <td>{{.Difficulty | title}}</td>
+                            <td>{{.Status}}</td>
+                            <td>{{.HintsUsed}}</td>
+                            <td>{{timeFormat .Timestamp}}</td>
+                        </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        {{else}}
+            <p>Aucun score enregistré.</p>
+        {{end}}
+        <a href="/">Retour à l'Accueil</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu - Accueil</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container classic"> <!-- Par défaut, thème classique -->
+        <h1>Bienvenue au Jeu du Pendu</h1>
+        <form method="POST" action="/">
+            <label for="username">Pseudo :</label>
+            <input type="text" id="username" name="username" required placeholder="Entrez votre pseudo">
+
+            <label for="difficulty">Niveau de difficulté :</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+
+            <label for="category">Catégorie :</label>
+            <select id="category" name="category" required>
+                <option value="animals">Animaux</option>
+                <option value="technology">Technologie</option>
+                <option value="countries">Pays</option>
+                <option value="random">Aléatoire</option>
+            </select>
+
+            <label for="theme">Thème :</label>
+            <select id="theme" name="theme" required>
+                <option value="classic">Classique</option>
+                <option value="dark">Sombre</option>
+                <option value="light">Clair</option>
+                <option value="colorful">Coloré</option>
+            </select>
+
+            <button type="submit">Commencer la Partie</button>
+        </form>
+        <a href="/scores">Voir les Scores</a>
+    </div>
+</body>
+</html>

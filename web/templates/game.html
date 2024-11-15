@@ -1,0 +1,43 @@
+<!-- templates/game.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu - Partie</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container {{.Theme}}">
+        <h1>Bonjour, {{.Username}} !</h1>
+        <h2>Catégorie : {{.Category | title}} | Niveau : {{.Difficulty | title}}</h2>
+
+        <div class="hangman">
+            <img src="/static/hangman{{.AttemptsLeft}}.png" alt="Pendu">
+        </div>
+
+        <p class="word-display">Mot : {{displayWord .Word .GuessedLetters}}</p>
+        <p>Lettres déjà essayées : {{range .GuessedLetters}}{{.}} {{end}}</p>
+        <p>Points de vie restants : {{.AttemptsLeft}}</p>
+        <p>Indices utilisés : {{.HintsUsed}} / 2</p>
+
+        {{if .Message}}
+            <p class="message {{.MessageType}}">{{.Message}}</p>
+        {{end}}
+
+        <form method="POST" action="/game">
+            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+            <label for="guess">Entrez une lettre ou un mot :</label>
+            <input type="text" id="guess" name="guess" required maxlength="20" autofocus>
+            <button type="submit">Valider</button>
+        </form>
+
+        <form method="POST" action="/game">
+            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+            <input type="hidden" name="action" value="hint">
+            <button type="submit">Demander un Indice (-1 tentative)</button>
+        </form>
+
+        <a href="/scores">Voir les Scores</a>
+    </div>
+</body>
+</html>

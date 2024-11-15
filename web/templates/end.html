@@ -1,0 +1,26 @@
+<!-- templates/end.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu - Fin de Partie</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container {{.Theme}}">
+        {{if eq .Status "won"}}
+            <h1>Félicitations, {{.Username}} ! Vous avez gagné !</h1>
+        {{else}}
+            <h1>Dommage, {{.Username}}. Vous avez perdu.</h1>
+            <p>Le mot était : <strong>{{.Word}}</strong></p>
+        {{end}}
+
+        <p>Catégorie : {{.Category | title}}</p>
+        <p>Niveau : {{.Difficulty | title}}</p>
+        <p>Indices utilisés : {{.HintsUsed}} / 2</p>
+
+        <a href="/">Rejouer</a>
+        <a href="/scores">Voir les Scores</a>
+    </div>
+</body>
+</html>

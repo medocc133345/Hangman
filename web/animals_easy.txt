@@ -1,0 +1,10 @@
+chat
+chien
+lion
+tigre
+singe
+vache
+cheval
+lapin
+oiseau
+poisson

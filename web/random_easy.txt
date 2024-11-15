@@ -1,0 +1,10 @@
+soleil
+arbre
+maison
+livre
+voiture
+ballon
+fleur
+rivière
+montagne
+neige
